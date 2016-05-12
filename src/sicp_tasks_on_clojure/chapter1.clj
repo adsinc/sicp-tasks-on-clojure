@@ -17,3 +17,7 @@
 
 (defn sqrt [x]
   (sqrt-iter 1 x))
+
+(doseq [x [1 2 3 4 5 6 7 8 9 10]
+        y [(sqrt x)]]
+  (println x " " y))
