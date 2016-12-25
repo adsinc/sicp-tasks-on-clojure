@@ -10,4 +10,5 @@
                  [org.hibernate/hibernate-core "5.2.5.Final"]
                  [com.ashafa/clutch "0.4.0"]
                  [ring "1.5.0"]
+                 [compojure "1.5.1"]
                  ])
