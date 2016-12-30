@@ -11,4 +11,5 @@
                  [com.ashafa/clutch "0.4.0"]
                  [ring "1.5.0"]
                  [compojure "1.5.1"]
+                 [enlive "1.1.6"]
                  ])
