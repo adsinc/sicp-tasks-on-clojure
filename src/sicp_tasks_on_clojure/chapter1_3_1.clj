@@ -1,10 +1,11 @@
 (ns sicp-tasks-on-clojure.chapter1-3-1)
 
 (defn sum [term a next b]
-  (if (> a b)
-    0
-    (+ (term a)
-       (sum term (next a) next b))))
+  (loop [a a
+         acc 0]
+    (if (> a b)
+      acc
+      (recur (next a) (+ acc (term a))))))
 
 (defn cube [a]
   (* a a a))
@@ -30,3 +31,22 @@
           (* (/ h 3) (+ acc (yk k)))
           (recur (dec k) (+ acc (yk k))))))))
 
+(defn accumulate [combiner null-value term a next b]
+  (loop [a a
+         acc null-value]
+    (if (> a b)
+      acc
+      (recur (next a) (combiner acc (term a))))))
+
+(defn product [term a next b]
+  (accumulate * 1 term a next b))
+
+;(defn product [term a next b]
+;  (loop [a a
+;         acc 1]
+;    (if (> a b)
+;      acc
+;      (recur (next a) (* acc (term a))))))
+
+(defn factorial [n]
+  (product identity 1 inc n))
