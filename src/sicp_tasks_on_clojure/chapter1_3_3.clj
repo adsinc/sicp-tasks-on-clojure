@@ -6,7 +6,6 @@
   (letfn [(close-enough? [v1 v2]
             (< (Math/abs (- v1 v2)) tolerance))
           (try-count [guess]
-            (println guess)
             (let [next (f guess)]
               (if (close-enough? guess next)
                 next
