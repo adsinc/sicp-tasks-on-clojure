@@ -39,3 +39,12 @@
   (fixed-point-of-transform (fn [y] (- (square y) x))
                             newton-transform
                             1.0))
+
+(defn cubic [a b c]
+  (fn [x] (+ (cube x)
+             (* a (square x))
+             (* b x)
+             c)))
+
+(defn find-zero [a b c]
+  (newton-method (cubic a b c) 1))
