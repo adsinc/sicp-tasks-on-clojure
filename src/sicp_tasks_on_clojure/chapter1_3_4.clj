@@ -48,3 +48,6 @@
 
 (defn find-zero [a b c]
   (newton-method (cubic a b c) 1))
+
+(defn double-it [f]
+  (comp f f))
