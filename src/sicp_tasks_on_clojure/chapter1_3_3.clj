@@ -12,7 +12,7 @@
                 (try-count next))))]
     (try-count first-guess)))
 
-(defn avg [x y] (/ (+ x y) 2))
+(defn avg [& xs] (/ (apply + xs) (count xs)))
 
 (defn sqrt [x]
   (fixed-point #(avg % (/ x %)) 1.0))

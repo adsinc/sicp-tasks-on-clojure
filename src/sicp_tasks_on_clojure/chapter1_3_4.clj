@@ -51,3 +51,12 @@
 
 (defn double-it [f]
   (comp f f))
+
+(defn compose [f g] #(f (g %)))
+
+(defn repeated-1 [f n]
+  (loop [i n
+         f f]
+    (if (<= i 1)
+      f
+      (recur (dec i) (compose f f)))))
