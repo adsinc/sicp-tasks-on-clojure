@@ -1,4 +1,4 @@
-(ns sicp-tasks-on-clojure.chapter2-1-1)
+(ns sicp-tasks-on-clojure.chapter2-1-4)
 
 (defrecord interval [min max])
 
